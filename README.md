@@ -60,3 +60,18 @@ npm install
 pnpm run dev 
 # or
 npm run dev
+```
+
+## Screenshots
+
+### Home Page
+![Home Page Preview](public/home.png "Homepage Preview")
+
+### About Page
+![About Page Preview](publicabouut.png "Aboutpage Preview")
+
+### TaskManager Page
+![TaskManager Page Preview](public/task-manager.png "TaskManager page Preview")
+
+### Fetch-API Page
+![Fetch-API Page Preview](public/fetch-api.png "Fetch-API page Preview")
