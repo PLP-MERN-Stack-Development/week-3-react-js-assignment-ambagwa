@@ -68,7 +68,7 @@ npm run dev
 ![Home Page Preview](public/home.png "Homepage Preview")
 
 ### About Page
-![About Page Preview](publicabouut.png "Aboutpage Preview")
+![About Page Preview](public/about.png "Aboutpage Preview")
 
 ### TaskManager Page
 ![TaskManager Page Preview](public/task-manager.png "TaskManager page Preview")
