@@ -7,7 +7,7 @@ Build a responsive React application using JSX and Tailwind CSS that demonstrate
 
 ### Task 1: Project Setup
 - Create a new React application using Vite
-- Install and configure Tailwind CSS
+- Install and configure Tailwind CSSuse 
 - Set up the project structure with components, pages, and utility folders
 - Configure basic routing using React Router
 

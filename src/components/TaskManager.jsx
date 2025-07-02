@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Button from './Button';
+import { useState, useEffect } from "react";
+import Button from "./Button";
 
 /**
  * Custom hook for managing tasks with localStorage persistence
@@ -7,13 +7,13 @@ import Button from './Button';
 const useLocalStorageTasks = () => {
   // Initialize state from localStorage or with empty array
   const [tasks, setTasks] = useState(() => {
-    const savedTasks = localStorage.getItem('tasks');
+    const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
 
   // Update localStorage when tasks change
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
   // Add a new task
@@ -53,13 +53,13 @@ const useLocalStorageTasks = () => {
  */
 const TaskManager = () => {
   const { tasks, addTask, toggleTask, deleteTask } = useLocalStorageTasks();
-  const [newTaskText, setNewTaskText] = useState('');
-  const [filter, setFilter] = useState('all');
+  const [newTaskText, setNewTaskText] = useState("");
+  const [filter, setFilter] = useState("all");
 
   // Filter tasks based on selected filter
   const filteredTasks = tasks.filter((task) => {
-    if (filter === 'active') return !task.completed;
-    if (filter === 'completed') return task.completed;
+    if (filter === "active") return !task.completed;
+    if (filter === "completed") return task.completed;
     return true; // 'all' filter
   });
 
@@ -67,11 +67,11 @@ const TaskManager = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addTask(newTaskText);
-    setNewTaskText('');
+    setNewTaskText("");
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+    <div className="bg-white dark:bg-gray-200 rounded-lg shadow p-6">
       <h2 className="text-2xl font-bold mb-6">Task Manager</h2>
 
       {/* Task input form */}
@@ -82,7 +82,7 @@ const TaskManager = () => {
             value={newTaskText}
             onChange={(e) => setNewTaskText(e.target.value)}
             placeholder="Add a new task..."
-            className="flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
+            className="flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-300 dark:border-gray-400"
           />
           <Button type="submit" variant="primary">
             Add Task
@@ -93,23 +93,24 @@ const TaskManager = () => {
       {/* Filter buttons */}
       <div className="flex gap-2 mb-4">
         <Button
-          variant={filter === 'all' ? 'primary' : 'secondary'}
+          variant={filter === "all" ? "primary" : "secondary"}
           size="sm"
-          onClick={() => setFilter('all')}
+          onClick={() => setFilter("all")}
         >
           All
         </Button>
         <Button
-          variant={filter === 'active' ? 'primary' : 'secondary'}
+          variant={filter === "active" ? "primary" : "secondary"}
+          className="transition-all duration-200 hover:scale-105 focus:ring-2 focus:ring-blue-500"
           size="sm"
-          onClick={() => setFilter('active')}
+          onClick={() => setFilter("active")}
         >
           Active
         </Button>
         <Button
-          variant={filter === 'completed' ? 'primary' : 'secondary'}
+          variant={filter === "completed" ? "primary" : "secondary"}
           size="sm"
-          onClick={() => setFilter('completed')}
+          onClick={() => setFilter("completed")}
         >
           Completed
         </Button>
@@ -132,11 +133,13 @@ const TaskManager = () => {
                   type="checkbox"
                   checked={task.completed}
                   onChange={() => toggleTask(task.id)}
-                  className="h-5 w-5 text-blue-600 rounded focus:ring-blue-500"
+                  className="transition-transform duration-200 scale-100 checked:scale-110 h-5 w-5 text-blue-600 rounded focus:ring-blue-500"
                 />
                 <span
                   className={`${
-                    task.completed ? 'line-through text-gray-500 dark:text-gray-400' : ''
+                    task.completed
+                      ? "line-through text-gray-500 dark:text-gray-400"
+                      : ""
                   }`}
                 >
                   {task.text}
@@ -157,12 +160,10 @@ const TaskManager = () => {
 
       {/* Task stats */}
       <div className="mt-6 text-sm text-gray-500 dark:text-gray-400">
-        <p>
-          {tasks.filter((task) => !task.completed).length} tasks remaining
-        </p>
+        <p>{tasks.filter((task) => !task.completed).length} tasks remaining</p>
       </div>
     </div>
   );
 };
 
-export default TaskManager; 
+export default TaskManager;
