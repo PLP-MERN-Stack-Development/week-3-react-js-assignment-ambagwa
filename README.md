@@ -19,7 +19,15 @@ A simple React application that allows users to:
 
 ---
 
+## Tech Stack
+
+Frontend - React(Vite), JSX, Tailwind CSS
+State - useState, useEffect
+
+
 ## 📂 Project Structure
+
+```
 
 src/
 ├── assets/ # Static assets like images
@@ -30,12 +38,17 @@ src/
 ├── main.jsx # ReactDOM.render / createRoot entry
 ├── index.css # Tailwind CSS + base styles'
 
-
----
+```
 
 ## 🛠️ Getting Started
 
-1. **Install dependencies:**
+### Clone the repo
+```bash 
+git clone https://github.com/PLP-MERN-Stack-Development/week-3-react-js-assignment-ambagwa.git
+cd week-3-react-js-assignment-ambagwa
+```
+
+**Install dependencies:**
 
 ```bash
 pnpm install
