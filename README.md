@@ -75,3 +75,6 @@ npm run dev
 
 ### Fetch-API Page
 ![Fetch-API Page Preview](public/fetch-api.png "Fetch-API page Preview")
+
+## Live Demo
+[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-Visit-blue?logo=github)](https://plp-mern-stack-development.github.io/week-3-react-js-assignment-ambagwa/)
