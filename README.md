@@ -54,3 +54,9 @@ cd week-3-react-js-assignment-ambagwa
 pnpm install
 # or
 npm install
+```
+## Run application
+```bash
+pnpm run dev 
+# or
+npm run dev
